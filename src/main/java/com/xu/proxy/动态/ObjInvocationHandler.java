@@ -10,13 +10,13 @@ import java.lang.reflect.Method;
  * com.xu.proxy.动态
  * AOP-Conding
  */
-public class StuInvocationHandler<T> implements InvocationHandler {
+public class ObjInvocationHandler<T> implements InvocationHandler {
     /**
      * 被代理对象
      */
     private T target;
 
-    public StuInvocationHandler(T target){
+    public ObjInvocationHandler(T target) {
         this.target = target;
     }
 

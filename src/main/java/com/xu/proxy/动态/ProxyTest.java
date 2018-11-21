@@ -20,11 +20,12 @@ public class ProxyTest {
     @Test
     public void  test(){
         //实际对象
-        Person person = new Student("yan");
+        Person stu = new Student("yan");
+        //Person tea = new Teacher();
         //创建一个与代理对象相关联的InvocationHandler
-        InvocationHandler personStuInvocationHandler = new StuInvocationHandler<>(person);
+        InvocationHandler personInvocationHandler = new ObjInvocationHandler<>(stu);
         //创建代理对象
-        Person p = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class<?>[]{Person.class}, personStuInvocationHandler);
+        Person p = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class<?>[]{Person.class}, personInvocationHandler);
         //执行目标方法
         p.giveMoney();
     }
@@ -34,9 +35,9 @@ public class ProxyTest {
         //实际对象
         Person person = new Student("yan");
         //创建一个与代理对象相关联的InvocationHandler
-        InvocationHandler personStuInvocationHandler = new StuInvocationHandler<>(person);
+        InvocationHandler personInvocationHandler = new ObjInvocationHandler<>(person);
         //创建代理对象
-        Person p = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class<?>[]{Person.class}, personStuInvocationHandler);
+        Person p = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class<?>[]{Person.class}, personInvocationHandler);
         InvocationHandler invocationHandler = Proxy.getInvocationHandler(p);
         Boolean b = Proxy.isProxyClass(p.getClass());
         Assert.assertEquals(true,b);
