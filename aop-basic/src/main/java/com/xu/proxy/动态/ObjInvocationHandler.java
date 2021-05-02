@@ -29,7 +29,7 @@ public class ObjInvocationHandler<T> implements InvocationHandler {
      * @param method 正在执行的方法
      * @param args 调用目标方法时传入的实参
      * @return Object
-     * @throws Throwable
+     * @throws Throwable e
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
