@@ -16,8 +16,7 @@ public class CglibTest {
         enhancer.setSuperclass(Student.class);
         //设置回调
         enhancer.setCallback(new ObjInterceptor());
-        Object o = enhancer.create();
-        Student s = (Student) o;
-        s.giveMoneyToGirl("yan");
+        Student student = (Student)enhancer.create();
+        student.giveMoneyToGirl("yan");
     }
 }

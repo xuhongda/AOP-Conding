@@ -8,7 +8,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * <p>
- * 动态代理测试
+ * JDK 动态代理测试;JDK 动态代理只提供基于接口的代理
  * </p>
  *
  * @author xuhongda on 2018/11/20

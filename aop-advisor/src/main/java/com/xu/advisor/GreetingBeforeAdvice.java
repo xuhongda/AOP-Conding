@@ -12,11 +12,6 @@ import java.lang.reflect.Method;
 public class GreetingBeforeAdvice implements MethodBeforeAdvice {
     /**
      * 前置增强
-     *
-     * @param method
-     * @param args
-     * @param target
-     * @throws Throwable
      */
     @Override
     public void before(Method method, Object[] args, Object target) throws Throwable {

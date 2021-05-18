@@ -17,10 +17,6 @@ import java.lang.reflect.Method;
 public class StaticGreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
     /**
      * 切点匹配方法
-     *
-     * @param method
-     * @param targetClass
-     * @return
      */
     @Override
     public boolean matches(Method method, Class<?> targetClass) {
@@ -29,8 +25,6 @@ public class StaticGreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
 
     /**
      * 切点匹配规则为 {@link Waiter} 的类或子类
-     *
-     * @return
      */
     public ClassFilter classFilter() {
         return Waiter.class::isAssignableFrom;
